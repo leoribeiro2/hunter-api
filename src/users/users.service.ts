@@ -20,6 +20,7 @@ export class UsersService {
                     erro: 'E-mail já existente',
                 }, HttpStatus.BAD_REQUEST);
             } else {
+                console.log(error);
                 throw new InternalServerErrorException('Ocorreu um erro ao registrar o usuário');
             }
         }

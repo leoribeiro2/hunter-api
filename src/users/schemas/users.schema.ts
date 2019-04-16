@@ -16,7 +16,7 @@ export const UserSchema = new mongoose.Schema({
 
 UserSchema.pre('save', function(next) {
     if (this.isModified('password')) {
-        this.password = bcrypt.hashSync(this.senha, 2);
+        this.password = bcrypt.hashSync(this.password, 10);
         next();
     }
     next();
